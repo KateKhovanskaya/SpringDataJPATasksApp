@@ -10,14 +10,25 @@ import java.time.LocalDateTime;
 @Table(name="tasks")
 
 public class Task {
+    /**
+     * ID задачи
+     */
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+    /**
+     * Описание задачи
+     */
     @Column(nullable = false)
     private String description;
+    /**
+     * Статус задачи
+     */
     @Enumerated
     private TaskStatus status = TaskStatus.NOT_STARTED;
-
+    /**
+     * Дата и время создания задачи
+     */
     private LocalDateTime creatingData = LocalDateTime.now();
 
 }
